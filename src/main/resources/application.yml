@@ -6,7 +6,7 @@ spring:
   application:
     name: TradeNex
   datasource:
-    url:  jdbc:postgeresql://${HOST}:5432/${POSTGRES_DB_NAME}}
+    url: jdbc:postgeresql://${HOST}:5432/${POSTGRES_DB_NAME}}
     username: ${POSTGRES_USERNAME}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
@@ -16,3 +16,5 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  liquibase:
+    change-log: classpath:db.changelog/master.yml
