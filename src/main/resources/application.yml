@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: TradeNex
+  datasource:
+    url:  jdbc:postgeresql://${HOST}:5432/${POSTGRES_DB_NAME}}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
